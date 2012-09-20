@@ -1,0 +1,47 @@
+#image {
+
+
+    background:url(home.jpg) no-repeat scroll 0 0 transparent;
+    text-align:left;
+    height: 500px;
+    width: 1000px;
+    margin-left:00px;
+    top : 50px;
+
+}
+
+#follow{
+	position: absolute;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 800px;
+    margin-top:15px;
+    width:180px;
+    height: 150px;
+   text-align:center;
+   filter: alpha(opacity=85);
+    -moz-opacity: .85;
+    background-color:#EEE
+
+}
+#find_a_shop{
+	position: absolute;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 800px;
+    margin-top:190px;
+    width:180px;
+    height: 150px;
+   text-align:center;
+   filter: alpha(opacity=85);
+    -moz-opacity: .85;
+    background-color:#EEE
+
+}
+
+#ab1{ 
+   left: 5px;
+}
+

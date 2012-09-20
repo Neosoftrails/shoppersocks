@@ -1,0 +1,64 @@
+<script>
+$(function() {
+$j('#portfolio').innerfade({
+    		speed: 'slow', timeout: 4000, type: 'sequence'
+    		}); 
+	   }); 
+</script>
+
+<%= stylesheet_link_tag "home"%> 
+
+<div id="image">
+  
+     <div id="follow" style="color:white;opacity:0.7;">
+     	    <div style="position:absolute;top:4px;left:28px;">
+     	   
+     	       <%= image_tag("follow.png") %>
+
+     	    </div>
+     	    <br>
+     	    <br>
+     	    <%= image_tag("line.png") %>
+            
+            
+            <div style="position:absolute;top:70px;left:28px;">
+     	         <%= link_to image_tag("twitter.png"), ' http://twitter.com/Cardy_Socks' %>
+     	    </div>
+
+     	    <div style="position:absolute;top:70px;left:120px;">
+     	     <%= link_to image_tag("facebook.png"), 'http://http://www.facebook.com/pages/Cardy-Socks/127898740583653?v=photos#!/pages/Cardy-Socks/127898740583653?v=wall' %>
+     	    </div> 
+
+
+     </div>
+
+     <div id="find_a_shop"style="color:white;opacity:0.7;">
+     	    <div style="position:absolute;top:4px;left:22px;">
+     	        <%= image_tag("find_a_shop.png") %>
+     	    </div>
+     	    <br>
+     	    <br>
+     	    <%= image_tag("line.png") %>
+                <%= form_tag users_path do |f| %> 
+                        <div style="position:absolute;top:55px;left:22px;"> 
+                                <%= text_field_tag :user_tokens, nil,  :size => 5, :value => 'Town'  %>
+                        </div>
+                        <div style="position:absolute;top:55px;left:120px;"> 
+                                <p class="button"> <%= image_submit_tag("button.png" ) %></p>
+                        </div> 
+                <% end %>               
+
+                <%= form_tag users_path do |f| %> 
+                        <div style="position:absolute;top:100px;left:22px;"> 
+                                <%= text_field_tag :user_tokens, nil,  :size => 5, :value => 'Area'  %>
+                        </div>
+                        <div style="position:absolute;top:100px;left:120px;"> 
+                                <p class="button"> <%= image_submit_tag("button.png" ) %></p>
+                        </div>    
+           
+                <% end %>  
+
+                
+     </div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="pro_inner">
+                    <!-- start content -->
+                            <div class="page-head">
+        <h3>Forgot Your Password?</h3>
+    </div>
+        <%= form_tag password_resets_path, :method => :post do %> 
+    <fieldset>
+        <legend>Retrieve your password here</legend>
+        <p>Please enter your email below and we'll send you a new password.</p>
+        <ul class="form-list">
+            <li>
+                <div class="input-box">
+                    <label for="email_address">Email Address <span class="required">*</span></label><br/>
+                    <%= text_field_tag :email, params[:email] %>  
+                </div>
+            </li>
+        </ul>
+    <div class="button-set">
+        <p class="required">* Required Fields</p>
+        <a href="http://cardysocks.co.uk/index.php/customer/account/login/" class="left">&laquo; Back to Login</a>
+        <button type="submit" class="form-button right"><span>Submit</span></button>
+    </div>
+    </fieldset>
+    <% end %>
+    </div>

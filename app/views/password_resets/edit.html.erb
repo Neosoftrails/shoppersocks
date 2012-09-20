@@ -1,0 +1,47 @@
+
+
+
+
+<div class="pro_inner">
+                    <!-- start content -->
+                            <div class="page-head">
+        <h3>Reset Password</h3>
+    </div>
+       <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+       <% if @user.errors.any? %>  
+        <div class="error_messages">  
+          <h2>Form is invalid</h2>  
+          <ul>  
+            <% for message in @user.errors.full_messages %>  
+              <li><%= message %></li>  
+            <% end %>  
+          </ul>  
+        </div>  
+      <% end %>    
+    <fieldset>
+
+        <p>Please enter your email below and we'll send you a new password.</p>
+        <ul class="form-list">
+            <li>
+                <div class="input-box">
+                    <label for="email_address">Password <span class="required">*</span></label><br/>
+                    <%= f.password_field :password %>  
+                </div>
+            </li>
+
+        </ul>
+        <ul class="form-list">
+            <li>
+                <div class="input-box">
+                    <label for="email_address">Password confirmation <span class="required">*</span></label><br/>
+                    <%= text_field_tag :email, params[:email] %>  
+                </div>
+            </li>
+            
+        </ul>
+    <div class="button-set">
+       <button type="submit" class="form-button right"><span>Update Password</span></button> 
+    </div>
+    </fieldset>
+    <% end %>
+    </div>     
