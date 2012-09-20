@@ -1,7 +1,13 @@
 Blog::Application.routes.draw do
   get "cardysockspages/home"
   get "cardysockspages/find_a_shop"
-   get "cardysockspages/about_us"
+  get "cardysockspages/about_us"
+  get "cardysockspages/contact_us"
+  get "cardysockspages/send_mail"
+  get "cardysockspages/products"
+   get "cardysockspages/search_bootcolor"
+
+
 
   get "sessions/new"
 

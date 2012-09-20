@@ -1,0 +1,51 @@
+<%= javascript_include_tag "cardysockspages1"  %>  
+<%= stylesheet_link_tag "home"%> 
+
+
+<div style="position:relative;left:0px;top:0px;width:800px;height:500px;border: 3px black solid;">
+
+		<div style="position:relative;left:20px;text-align:left;">
+			   <font size="3">1: Select a boot colour</font>
+			   <br>
+				   <%=link_to image_tag("boot_color1.gif"), cardysockspages_products_path,:id => 'link1', :href => "#" %>
+				   <%= image_tag("boot_color2.gif") %>
+				   <%= image_tag("boot_color3.gif") %>
+				   <%= image_tag("boot_color4.gif") %>
+		</div>
+		<div style="position:relative;left:20px;text-align:left;">
+			 <%= render :partial => 'socks_height' %>
+
+		</div>
+		<div style="position:relative;left:20px;text-align:left;">
+			 <%= render :partial => 'socks_color'  %>
+
+		</div>	
+
+		<div style="position:relative;left:20px;text-align:left;">
+		      <font size="3">4: What next?   </font>
+			   <br>
+			   <br>
+			    <font size="3">
+		       <%= link_to "Print this picture..." %><br>
+
+		        <%= link_to "Email to a friend..." %><br>
+		         <%= link_to "Share this design..." %></font>
+
+		</div>	
+     
+		<div style="position:absolute;left:400px;top:20px;width:350px;height:450px;border: 3px coral solid;", id="replace">
+             
+             <%= render :partial => 'boot_pic' %>
+
+			</div>
+
+</div>
+
+
+
+
+
+
+
+
+

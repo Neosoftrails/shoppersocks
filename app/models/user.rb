@@ -44,6 +44,12 @@ attr_accessible :first_name, :last_name, :email, :password, :password_confirmati
      UserMailer.password_reset(self).deliver
    end 
 
+  def send_enquiry_mail(name,email,enquiry,telephone)
+
+    UserMailer.mail_contact_us(name,email,enquiry,telephone).deliver
+
+  end  
+
 
 end
  

@@ -11,4 +11,15 @@ class UserMailer < ActionMailer::Base
 
     mail :to => user.email, :subject => "Password Reset"
   end
-end
+
+  def mail_contact_us(name,email,enquiry,telephone)
+   @name = name
+   @email = email 
+   @enquiry = enquiry
+   @telephone = telephone
+    sendmail = "cardysocks@gmail.com"
+
+    mail :to => sendmail, :subject => "enquiry"
+
+  end
+end  
