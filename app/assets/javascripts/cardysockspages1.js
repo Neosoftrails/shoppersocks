@@ -1,11 +1,131 @@
 $(document).ready(function() {
+	    $("#link3b").show();
+	    $("#link2b").hide();
+        $("#link4b").hide(); 
+        $("#link1b").hide();
+        $("#height").hide();
+        $("#color").hide(); 
+        $("#small1").hide(); 
+        $("#small2").hide();    
+        $("#small3").hide();   
+        $("#small4").hide();    
+   
 
-	$("#link1").click(function(event){
-	    
-	     alert("hfjhjg");
-	  $("#replace").html("<%= escape_javascript(render :partial => 'cardysockspages/socks_color', :locals => {:link => '1'}) %>");
+		$("#link1").click(function(event){
+					$("#height").show();
 
-	    
-	    
-	  })
+							$("#size2").click(function(event){
+							   
+							    $("#small1").show();
+						        $("#small2").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            $("#link3b").hide();
+							    $("#link2b").hide();
+						        $("#link4b").hide(); 
+						        $("#link1b").hide();          
+					           })
+
+							$("#size1").click(function(event){	
+
+							    
+						        $("#link1b").show();
+						        $("#link2b").hide();
+						        $("#link3b").hide();
+					            $("#link4b").hide(); 
+					           $("#small1").hide();
+						         $("#small2").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            })          
+			           })
+
+		$("#link2").click(function(event){
+			     $("#height").show();
+              
+		              $("#size1").click(function(event){	
+
+							    
+						        $("#link2b").show();
+						        $("#link1b").hide();
+						        $("#link3b").hide();
+					            $("#link4b").hide(); 
+					            $("#small1").hide();
+						        $("#small2").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            }) 
+					    $("#size2").click(function(event){
+							   
+							    $("#small2").show();
+						        $("#small1").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            $("#link3b").hide();
+							    $("#link2b").hide();
+						        $("#link4b").hide(); 
+						        $("#link1b").hide();          
+					           })          
+
+            })
+
+
+		$("#link3").click(function(event){
+						     $("#height").show();
+              
+		              $("#size1").click(function(event){	
+
+							    
+						        $("#link3b").show();
+						        $("#link1b").hide();
+						        $("#link2b").hide();
+					            $("#link4b").hide(); 
+					            $("#small1").hide();
+						        $("#small2").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            }) 
+					    $("#size2").click(function(event){
+							   
+							    $("#small3").show();
+						        $("#small1").hide();
+						        $("#small2").hide();
+					            $("#small4").hide();
+					            $("#link3b").hide();
+							    $("#link2b").hide();
+						        $("#link4b").hide(); 
+						        $("#link1b").hide();          
+					           })          
+					                   
+	           })
+		$("#link4").click(function(event){
+							      $("#height").show();
+              
+		              $("#size1").click(function(event){	
+
+							    
+						        $("#link4b").show();
+						        $("#link1b").hide();
+						        $("#link2b").hide();
+					            $("#link3b").hide(); 
+					            $("#small1").hide();
+						        $("#small2").hide();
+						        $("#small3").hide();
+					            $("#small4").hide();
+					            }) 
+					    $("#size2").click(function(event){
+							   
+							    $("#small4").show();
+						        $("#small1").hide();
+						        $("#small2").hide();
+					            $("#small3").hide();
+					            $("#link3b").hide();
+							    $("#link2b").hide();
+						        $("#link4b").hide(); 
+						        $("#link1b").hide();          
+					           })                   
+	           })
 });
+
+
+

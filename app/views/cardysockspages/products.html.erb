@@ -7,16 +7,17 @@
 		<div style="position:relative;left:20px;text-align:left;">
 			   <font size="3">1: Select a boot colour</font>
 			   <br>
-				   <%=link_to image_tag("boot_color1.gif"), cardysockspages_products_path,:id => 'link1', :href => "#" %>
-				   <%= image_tag("boot_color2.gif") %>
-				   <%= image_tag("boot_color3.gif") %>
-				   <%= image_tag("boot_color4.gif") %>
+
+ 				   <%=link_to image_tag("boot_color1.gif"), cardysockspages_products_path,:id => 'link1', :href => "#" %>
+				   <%=link_to image_tag("boot_color2.gif"), cardysockspages_products_path,:id => 'link2', :href => "#" %>
+				   <%=link_to image_tag("boot_color3.gif"), cardysockspages_products_path,:id => 'link3', :href => "#" %>
+				   <%=link_to image_tag("boot_color4.gif"), cardysockspages_products_path,:id => 'link4', :href => "#" %>
 		</div>
-		<div style="position:relative;left:20px;text-align:left;">
+		<div style="position:relative;left:20px;text-align:left;" id="height">
 			 <%= render :partial => 'socks_height' %>
 
 		</div>
-		<div style="position:relative;left:20px;text-align:left;">
+		<div style="position:relative;left:20px;text-align:left;" id="color">
 			 <%= render :partial => 'socks_color'  %>
 
 		</div>	
@@ -34,11 +35,42 @@
 		</div>	
      
 		<div style="position:absolute;left:400px;top:20px;width:350px;height:450px;border: 3px coral solid;", id="replace">
-             
-             <%= render :partial => 'boot_pic' %>
+            
+	             <ul id="link1b">
+	             	<%= image_tag("TALL_blacktall.png") %>
+	             </ul>
+	             <ul id="link2b">
+	             	<%= render :partial => 'boot_pic' %>
+	             </ul>
+	             <ul id="link3b">
+	             	<%= image_tag("TALL_browntall.png") %>
+	             </ul>  
+	             <ul id="link4b">
+	             	<%= image_tag("TALL_whitetall.png") %>
+	             </ul> 
+            
 
-			</div>
+            
+	             <ul id="small1">
 
+	             	<%= image_tag("SHORT_black.png") %>
+	             </ul>
+	             <ul id="small2">
+
+	             	<%= image_tag("SHORT_brown.png") %>
+	             </ul>
+	             <ul id="small3">
+	             	<%= image_tag("SHORT_cream.png") %>
+	             </ul>  
+	             <ul id="small4">
+	             	<%= image_tag("SHORT_white.png") %>
+	             </ul>   
+              
+	   </div>
+
+                  
+
+                  
 </div>
 
 
