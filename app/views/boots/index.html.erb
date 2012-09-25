@@ -1,0 +1,30 @@
+<font color="#959595"><h1>boots</h1></font>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bootlargeimage</th>
+    <th>Bootsmallimage</th>
+    <th>Thumbimage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boots.each do |boot| %>
+  <tr>
+    <td><%= boot.name %></td>
+    <td><%= image_tag(boot.bootlargeimage_file_name) %></td>
+    <td><%= image_tag(boot.bootsmallimage_file_name) %></td>
+    <td><%=image_tag(boot.bootthumbimage_file_name) %></td>
+    <td><%= link_to 'Show', boot %></td>
+    <td><%= link_to 'Edit', edit_boot_path(boot) %></td>
+    <td><%= link_to 'Destroy', boot, data: { confirm: 'Are you sure?' }, :method => :delete %></td>
+   
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boot', new_boot_path %>

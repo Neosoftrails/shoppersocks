@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sock.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @sock.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_sock_path(@sock) %> |
+<%= link_to 'Back', socks_path %>

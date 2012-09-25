@@ -1,0 +1,25 @@
+<font color="#959595"><h1> socks</h1></font>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @socks.each do |sock| %>
+  <tr>
+    <td><%= sock.name %></td>
+    <td><%= image_tag(sock.image_file_name) %></td>
+    <td><%= link_to 'Show', sock %></td>
+    <td><%= link_to 'Edit', edit_sock_path(sock) %></td>
+    <td><%= link_to 'Destroy', sock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sock', new_sock_path %>

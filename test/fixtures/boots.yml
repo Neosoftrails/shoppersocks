@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  bootlargeimage: MyString
+  bootsmallimage: MyString
+  thumbimage: MyString
+
+two:
+  name: MyString
+  bootlargeimage: MyString
+  bootsmallimage: MyString
+  thumbimage: MyString

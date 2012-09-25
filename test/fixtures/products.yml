@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  productname: MyString
+  price: 1.5
+  largebootimage: MyString
+  smallbootimage: MyString
+  boot: 
+  sock: 
+
+two:
+  productname: MyString
+  price: 1.5
+  largebootimage: MyString
+  smallbootimage: MyString
+  boot: 
+  sock: 

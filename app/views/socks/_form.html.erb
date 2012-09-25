@@ -1,0 +1,17 @@
+ <%= javascript_include_tag  "rails.validations" %>  
+
+<%= form_for @sock, :validate => true  , :html => { :multipart => true }  do |f| %>
+ 
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image, "Photo" %> <br> 
+      <%= f.file_field :image %>  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

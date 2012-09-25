@@ -36,10 +36,7 @@ class CardysockspagesController < ApplicationController
 
   def search_bootcolor
 
-     p	id
-     puts "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
-     mmmmmm
-
+     
 
   end	
 

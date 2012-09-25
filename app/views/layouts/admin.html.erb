@@ -1,0 +1,74 @@
+<%= stylesheet_link_tag  "admin" %> 
+<%= stylesheet_link_tag  "content" %> 
+
+<%= javascript_include_tag :application  %>  
+<%= javascript_include_tag  "rails.validations" %>  
+<div id="header" style="position:absolute;width:100%;height:60px;" bgcolor="#111111" color="#BBBBBB" size="7">
+	<br>
+	shoppersocks 
+      <div id="link" style="left:300;color:white;" >
+      	 <%= link_to 'BOOTS ', boots_path, :style => "color:#BBBBBB"  %>
+      </div>
+      <div   id="link" style="left:400;" >
+      	|&nbsp;&nbsp;&nbsp;<%= link_to 'SOCKS ', socks_path, :style => "color:#BBBBBB"   %>
+      </div>
+      <div   id="link" style="left:500;" >
+      	|&nbsp;&nbsp;&nbsp;<%= link_to 'PRODUCTS  ', products_path, :style => "color:#BBBBBB"   %> 
+      </div>
+      
+       <div  id="b" class="tooltip" title="logout" style="position:absolute;width:30;height:20px;left:1300;" bgcolor="#BBBBBB" color="BBBBBB" >
+      	<%=  link_to image_tag("logout.png"), log_out_path   %>
+      </div>
+
+
+
+</div>
+<div id="body" >
+      <div style="position:absolute;width:400;height:20px;left:50;top:100;" >
+                <font color="#111111" size="4">Hello! What would you like to do?</font> </div>
+                <div style="position:absolute;width:500;height:20px;left:50;top:130;">
+
+                <font color="red" size="2"><%= link_to 'Home', :style => "color:#BBBBBB"   %>&nbsp;/&nbsp;<%= link_to 'Projects', :style => "color:#BBBBBB"  %>&nbsp;/&nbsp;<%= link_to 'Project Assets', :style => "color:#BBBBBB"  %>&nbsp;/&nbsp;<%= link_to 'Edit Assets', :style => "color:#BBBBBB"  %>&nbsp;</font>
+
+      </div>
+
+      <div id="shortcuts" style="color:white;opacity:0.7;">
+
+                  <div id="users" style="position:relative;color:white;opacity:0.7;">
+                  <%= link_to image_tag ("users.png") %><font color="#111111" size="3"> Users</font>
+                  </div> 
+
+                  <div id="products" style="position:absolute;color:white;opacity:0.7;top:00px">
+                  <%= link_to image_tag ("products.png") %><font color="#111111" size="3"> Products</font>
+                  </div> 
+
+                  <div id="settings" style="position:absolute;color:white;opacity:0.7;top:00px">
+                  <%= link_to image_tag ("settings.png") %><font color="#111111" size="3"> Settingss</font>
+                  </div> 
+
+
+      </div>
+
+      <div class="content-box col-2 clear-rm" style="position:absolute;color:white;opacity:0.7;height:600px">
+          <header>
+          <h2>
+             <font color="#545454">Listings</font> </h2 >
+           </header>
+           <ul class="stats-summary">
+              <%= yield %>
+           </ul>
+      </div>
+      
+        <!--<h2>Stats and Progress Bars</h2>
+
+      <div class="content-box col-2 clear-rm" style="position:absolute;color:white;opacity:0.7;">
+                  <%#= yield %>
+      </div>-->
+  
+</div>
+
+<div id="footer">
+  </div>
+
+
+

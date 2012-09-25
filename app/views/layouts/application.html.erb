@@ -61,10 +61,7 @@
 </head>
 <body class=" customer-account-create">
   
-  <% flash.each do |name, msg| %>  
-        <font size="5" color="red"><%= content_tag :div, msg, :id => "flash#{name}" %> </font> 
-      <% end %>  
-
+ 
 <div class="wrapper">
         <noscript>
         <div class="noscript">
@@ -107,10 +104,14 @@
               <a href="http://cardysocks.co.uk/index.php/find_store/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','images/find_shop_1.png',1)"><img src="http://cardysocks.co.uk/skin/frontend/default/default/images/find_shop.png" name="Image7" width="169" height="51" border="0" id="Image7" alt=""/></a>
                         </p>
                       <p>
-                        <a href="" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/contact_us_1.png',1)"><img src="http://cardysocks.co.uk/skin/frontend/default/default/images/contact_us.png" name="Image8" width="144" height="51" border="0" id="Image8" alt=""/></a>
+                        <a href="<%= cardysockspages_contact_us_path %>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/contact_us_1.png',1)"><img src="http://cardysocks.co.uk/skin/frontend/default/default/images/contact_us.png" name="Image8" width="144" height="51" border="0" id="Image8" alt=""/></a>
                         </p>
             
-                    </div>           
+                    </div> 
+
+                     <% flash.each do |name, msg| %>  
+        <font size="4" color="green"><%= content_tag :div, msg, :id => "flash#{name}" %> </font> 
+      <% end %>           
 <div class="header-nav-container">
     <div class="header-nav">
         <h4 class="no-display">Category Navigation:</h4>

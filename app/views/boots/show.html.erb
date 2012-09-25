@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @boot.name %>
+</p>
+
+<p>
+  <b>Bootlargeimage:</b>
+  <%= image_tag @boot.bootlargeimage.url %>
+</p>
+
+<p>
+  <b>Bootsmallimage:</b>
+  <%= image_tag @boot.bootsmallimage.url %>
+</p>
+
+<p>
+  <b>Thumbimage:</b>
+  <%= image_tag @boot.bootthumbimage.url%>
+</p>
+
+
+<%= link_to 'Edit', edit_boot_path(@boot) %> |
+<%= link_to 'Back', boots_path %>

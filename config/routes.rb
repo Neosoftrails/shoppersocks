@@ -1,11 +1,24 @@
 Blog::Application.routes.draw do
+  resources :contact_us
+
+  resources :about_us
+
+  resources :products
+
+  resources :socks
+
+  resources :boots
+  get "/boots/:id/delete"
+  resources :admins
+
   get "cardysockspages/home"
   get "cardysockspages/find_a_shop"
   get "cardysockspages/about_us"
   get "cardysockspages/contact_us"
   get "cardysockspages/send_mail"
   get "cardysockspages/products"
-   get "cardysockspages/search_bootcolor"
+  get "cardysockspages/search_bootcolor"
+  root :to => "cardysockspages#home"
 
 
 
@@ -16,7 +29,7 @@ Blog::Application.routes.draw do
   
   
   get "sign_up" => "users#new", :as => "sign_up"  
-  root :to => "users#new" 
+   
   match 'password_resets/:id/edit' => 'password_resets#edit'
   resources :users  
   resources :sessions  

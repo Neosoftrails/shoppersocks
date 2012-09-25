@@ -376,10 +376,29 @@ $j(document).ready(function(){
 	//Function called on click of category
 	//FUNCTION 1
 	$j(".categoryId").click(function(){
-		$j("#rightbootimage").html('');
+    
+
+       
+    var img=$j("#rightbootimage").html();   
+    var index = img.lastIndexOf("/") + 1;
+    var filename = img.substr(index);
+
+
+    if file
+
+
+
+    
+
+
+
+
+
+
+
 		Element.show('loadingmask');
 		var cate = $j(this).attr('id');
-		
+
 		var $j_object = $j(".socksdisplay");
 		$j_object.each( function(i) { 
 			$j(this).hide();
