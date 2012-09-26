@@ -1,25 +1,45 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @boot.name %>
-</p>
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Boots</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_boot_path %>" > Add boots</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
 
-<p>
-  <b>Bootlargeimage:</b>
-  <%= image_tag @boot.bootlargeimage.url %>
-</p>
-
-<p>
-  <b>Bootsmallimage:</b>
-  <%= image_tag @boot.bootsmallimage.url %>
-</p>
-
-<p>
-  <b>Thumbimage:</b>
-  <%= image_tag @boot.bootthumbimage.url%>
-</p>
+<table class="datatable">
+  <thead  class="trclass" border="1">
+  <tr>
+    <th class="sorting">Name</th>
+    <th>large boot</th>
+    <th>small boot</th>
+    <th>boot color</th>
+    <th>Action</th>
+    
+  </tr>
+    </thead>
+    
 
 
-<%= link_to 'Edit', edit_boot_path(@boot) %> |
-<%= link_to 'Back', boots_path %>
+  <tr>
+    <td ><%= @boot.name %></td>
+    <td ><%= image_tag(@boot.bootlargeimage_file_name) %></td>
+    <td ><%= image_tag(@boot.bootsmallimage_file_name) %></td>
+    <td ><%=image_tag(@boot.bootthumbimage_file_name) %></td>
+    <td class="tooltip" title="Edit"><%= link_to image_tag("icons/actions/page_white_edit.png"),edit_boot_path(@boot) %> 
+ </td>
+   
+  </tr>
+
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>

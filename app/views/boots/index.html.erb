@@ -1,30 +1,61 @@
-<font color="#959595"><h1>boots</h1></font>
+<%= stylesheet_link_tag  "datatables" %> 
+<%= javascript_include_tag  "login" %>  
 
-<table>
+
+<style type="text/css">
+
+table.display tr.even.row_selected td { background-color: #B0BED9; }
+table.display tr.odd.row_selected td { background-color: #9FAFD1; }
+
+</style>
+
+
+
+
+
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Boots</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_boot_path %>" > Add boots</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
+
+<table class="datatable">
+  <thead  class="trclass" border="1">
   <tr>
-    <th>Name</th>
-    <th>Bootlargeimage</th>
-    <th>Bootsmallimage</th>
-    <th>Thumbimage</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="sorting">Name</th>
+    <th>large boot</th>
+    <th>small boot</th>
+    <th>boot color</th>
+    <th>Action</th>
+    
   </tr>
+    </thead>
+    
 
 <% @boots.each do |boot| %>
   <tr>
-    <td><%= boot.name %></td>
-    <td><%= image_tag(boot.bootlargeimage_file_name) %></td>
-    <td><%= image_tag(boot.bootsmallimage_file_name) %></td>
-    <td><%=image_tag(boot.bootthumbimage_file_name) %></td>
-    <td><%= link_to 'Show', boot %></td>
-    <td><%= link_to 'Edit', edit_boot_path(boot) %></td>
-    <td><%= link_to 'Destroy', boot, data: { confirm: 'Are you sure?' }, :method => :delete %></td>
+    <td ><%= boot.name %></td>
+    <td ><%= image_tag(boot.bootlargeimage_file_name) %></td>
+    <td ><%= image_tag(boot.bootsmallimage_file_name) %></td>
+    <td ><%=image_tag(boot.bootthumbimage_file_name) %></td>
+    <td >
+      <span class="tooltip" title="Show"><%= link_to image_tag("icons/actions/page_white_find.png"),  boot %></span>&nbsp;
+    <span  class="tooltip" title="edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_boot_path(boot) %></span>&nbsp;
+    <span class="tooltip" title="delete"><%= link_to image_tag("icons/actions/page_white_delete.png"), boot, data: { confirm: 'Are you sure?' }, :method => :delete %></td>
    
   </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Boot', new_boot_path %>
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>

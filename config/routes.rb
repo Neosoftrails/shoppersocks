@@ -23,7 +23,7 @@ Blog::Application.routes.draw do
 
 
   get "sessions/new"
-
+  get "admin" => "admins#index", :as => "admin"
   get "log_in" => "sessions#new", :as => "log_in"  
   get "log_out" => "sessions#destroy", :as => "log_out"  
   

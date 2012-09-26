@@ -1,7 +1,14 @@
+
+
 class BootsController < ApplicationController
+ before_filter :login_required
+ 
+
+
+
   # GET /boots
   # GET /boots.json
-    layout "admin"
+    layout "admin1"
   def index
     @boots = Boot.all
 

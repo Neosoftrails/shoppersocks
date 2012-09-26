@@ -1,15 +1,45 @@
-<p id="notice"><%= notice %></p>
+<font color="#green"><p id="notice"><%= notice %></p></font>
 
-<p>
-  <b>Name:</b>
-  <%= @sock.name %>
-</p>
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Socks</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_sock_path %>" > Add Socks</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
 
-<p>
-  <b>Image:</b>
-  <%= @sock.image %>
-</p>
+<table class="datatable">
+  <thead  class="trclass" border="1">
+  <tr>
+  	 <th>Name</th>
+    <th>Image</th>
+    <th>Action</th>
+    
+  </tr>
+    </thead>
 
 
-<%= link_to 'Edit', edit_sock_path(@sock) %> |
-<%= link_to 'Back', socks_path %>
+
+  <tr>
+    <td > <%= @sock.name %></td>
+    <td ><%=image_tag(@sock.image_file_name) %></td>
+   <td class="tooltip" title="Edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_sock_path(@sock) %></td>
+    
+ </td>
+   
+  </tr>
+
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>
+
+

@@ -1,25 +1,42 @@
-<font color="#959595"><h1> socks</h1></font>
+<%= stylesheet_link_tag  "datatables" %> 
+<%= javascript_include_tag  "login" %>  
 
-<table>
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Socks</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_sock_path %>" > Add socks</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
+
+<table class="datatable">
+  <thead  class="trclass" border="1">
   <tr>
     <th>Name</th>
     <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Action</th>
   </tr>
+</thead>
 
 <% @socks.each do |sock| %>
   <tr>
     <td><%= sock.name %></td>
     <td><%= image_tag(sock.image_file_name) %></td>
-    <td><%= link_to 'Show', sock %></td>
-    <td><%= link_to 'Edit', edit_sock_path(sock) %></td>
-    <td><%= link_to 'Destroy', sock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+     <span class="tooltip" title="Show"><%= link_to image_tag("icons/actions/page_white_find.png"), sock %></span>&nbsp;
+     <span  class="tooltip" title="edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_sock_path(sock) %></span>&nbsp;
+     <span class="tooltip" title="delete"><%= link_to image_tag("icons/actions/page_white_delete.png"), sock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Sock', new_sock_path %>
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>

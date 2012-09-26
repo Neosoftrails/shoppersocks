@@ -35,10 +35,11 @@
     background-color:  #BBBBBB;
     height: 160%;
      width: 100%;
+
 }
 
 #content{
-  width: 400px;
+  width: 600px;
   position: absolute;
   -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -180,3 +181,4 @@
 }
 .clear-rm { margin-right:0; }
 .clear-tm { margin-top:0; }
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120925094007) do
+ActiveRecord::Schema.define(:version => 20120925110021) do
 
   create_table "about_us", :force => true do |t|
     t.string   "name"
@@ -64,8 +64,16 @@ ActiveRecord::Schema.define(:version => 20120925094007) do
     t.string   "smallbootimage"
     t.integer  "boot_id"
     t.integer  "sock_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "largeimage_file_name"
+    t.string   "largeimage_content_type"
+    t.integer  "largeimage_file_size"
+    t.datetime "largeimage_updated_at"
+    t.string   "small_image_file_name"
+    t.string   "small_image_content_type"
+    t.integer  "small_image_file_size"
+    t.datetime "small_image_updated_at"
   end
 
   add_index "products", ["boot_id"], :name => "index_products_on_boot_id"

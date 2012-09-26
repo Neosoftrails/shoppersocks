@@ -1,17 +1,44 @@
  <%= javascript_include_tag  "rails.validations" %>  
+ <%= stylesheet_link_tag  "datatables" %> 
+<%= javascript_include_tag  "login" %>  
+
+ <article class="content-box minimizer">
+  
+  <header>
+        
+    <h2 style="padding-right: 90px;">Sockss</h2>
+    <nav>
+      <ul class="button-switch">
+        <li><a class="button" href="<%= socks_path %>">List Socks</a></li>
+      </ul>
+    </nav>
+
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+
+  <section>
+  
 
 <%= form_for @sock, :validate => true  , :html => { :multipart => true }  do |f| %>
- 
+   <fieldset><legend>Add Sock </legend>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <font color="#000000"><%= f.label :name %>
+    <%= f.text_field :name %></font>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :image, "Photo" %> <br> 
-      <%= f.file_field :image %>  
+   <font color="#000000"><%= f.label :image, "Photo" %> 
+      <% if @sock.image_file_name %>
+      <%= image_tag(@sock.image_file_name) %>
+      <% end %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</fieldset>
+
+</section>
+</article>

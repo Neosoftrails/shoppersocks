@@ -1,35 +1,50 @@
-<p id="notice"><%= notice %></p>
+<font color="green"><p id="notice"><%= notice %></p></font>
 
-<p>
-  <b>Productname:</b>
-  <%= @product.productname %>
-</p>
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Socks</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_sock_path %>" > Add Socks</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
+<table class="datatable">
+  <thead  class="trclass" border="1">
+  <tr>
+  	 <th class="sorting">Product name</th>
+    <th>Large image</th>
+    <th>Small image</th>
+    <th>Price</th>
+    <th>Action</th>
+    
+  </tr>
+    </thead>
 
-<p>
-  <b>Largebootimage:</b>
-  <%= @product.largebootimage %>
-</p>
+     <tr>
+    <td ><%= @product.productname %></td>
+    <td ><%= image_tag(@product.largeimage_file_name) %></td>
+    <td ><%= image_tag(@product.small_image_file_name) %></td>
+    <td ><%= @product.price %></td>
+    <td class="tooltip" title="Edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_product_path(@product) %> 
+    	
+ </td>
+   
+  </tr>
 
-<p>
-  <b>Smallbootimage:</b>
-  <%= @product.smallbootimage %>
-</p>
-
-<p>
-  <b>Boot:</b>
-  <%= @product.boot %>
-</p>
-
-<p>
-  <b>Sock:</b>
-  <%= @product.sock %>
-</p>
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>
+    
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+

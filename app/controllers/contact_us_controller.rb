@@ -1,6 +1,7 @@
 class ContactUsController < ApplicationController
   # GET /contact_us
   # GET /contact_us.json
+  layout "admin1"
   def index
     @contact_us = ContactU.all
 

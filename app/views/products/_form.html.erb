@@ -1,24 +1,65 @@
-<%= form_for(@product) do |f| %>
+<%= javascript_include_tag  "rails.validations" %>  
+
+ <article class="content-box minimizer">
   
+  <header>
+        
+    <h2 style="padding-right: 90px;">Products</h2>
+    <nav>
+      <ul class="button-switch">
+        <li><a class="button" href="<%= products_path %>">List Products</a></li>
+      </ul>
+    </nav>
+
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 120px;">Toggle</a>
+  </header>
+
+  <section>
+
+<%= form_for @product , :validate => true, :html => { :multipart => true }  do |f| %>
+  
+  <fieldset><legend>Add Product </legend>
+
+  <div class="field" >
+   <font color="#000000" > <%= f.label :product_name %>
+    <%= f.text_field :productname, :style => 'margin-left:80px;' %></font>
+  </div>
+  <br />
+  <div class="field">
+    <font color="#000000" ><%= f.label :price %>
+    <%= f.text_field :price, :style => 'margin-left:135px;' %></font>
+  </div>
+  <br />
+  <div class="field">
+    <font color="#000000"><%= f.label :Select_Boot %>
+   <%= f.select('boot_id', options_for_select(@boots.collect{ |u| [u.name, u.id] }),{},:style => "width:310px;margin-left:95px;") %></font>
+  </div>
+<br /> 
 
   <div class="field">
-    <%= f.label :productname %><br />
-    <%= f.text_field :productname %>
+    <font color="#000000"><%= f.label :Select_sock %>
+  <%= f.select('sock_id', options_for_select(@socks.collect{ |u| [u.name, u.id] }),{},:style => "width:310px;margin-left:95px;") %></font>
   </div>
+<br /> 
   <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    <font color="#000000"><%= f.label :large_image %>
+    <%= f.file_field :largeimage, :style => 'margin-left:80px;' %></font>
+    <% if @product.largeimage_file_name %>
+    <%= image_tag(@product.largeimage_file_name) %>
+    <% end %>
   </div>
+<br /> 
+
   <div class="field">
-    <%= f.label :largebootimage %><br /> 
-    <%= f.file_field :largebootimage %>
+    <font color="#000000"><%= f.label :small_image %>
+    <%= f.file_field :small_image, :style => 'margin-left:80px;' %></font>
+    <% if @product.small_image_file_name %>
+    <%= image_tag(@product.small_image_file_name) %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :smallbootimage %><br />
-    <%= f.file_field :smallbootimage %>
-  </div>
-  
+  <br />
   <div class="actions">
+  </br>
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,23 +1,65 @@
-<%= form_for @boot, :validate => true, :html => { :multipart => true } do |f| %>
-  
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :bootlargeimage, "bootlargeimage" %><br />
-    <%= f.file_field :bootlargeimage %>
-  </div>
-  <div class="field">
-    <%= f.label :bootsmallimage, "bootsmallimage" %><br />
-    <%= f.file_field :bootsmallimage %>
-  </div>
-  <div class="field">
-    <%= f.label :bootthumbimage, "bootthumbimage" %><br />
-    <%= f.file_field :bootthumbimage %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<article class="content-box minimizer">
+  
+  <header>
+        
+    <h2 style="padding-right: 90px;">Boots</h2>
+    <nav>
+      <ul class="button-switch">
+        <li><a class="button" href="<%= boots_path %>">List Boots</a></li>
+      </ul>
+    </nav>
+
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+
+  <section>
+  
+  <%= form_for @boot, :validate => true, :html => { :multipart => true } do |f| %>
+     <fieldset><legend>Add Boot </legend>
+          <div class="field" style="height:40px">
+            <font color="#000000"><%= f.label :name %></font>
+            <%= f.text_field :name, :style => 'margin-left:30px;' %> 
+          </div>
+        <br/>
+
+          <div class="field datatable" >
+            <div > 
+                <font color="#000000"><%= f.label :bootlargeimage, "large boot" %></font>
+                <%= f.file_field :bootlargeimage %> 
+                 <% if @boot.bootlargeimage_file_name %>
+                 
+                     <%= image_tag(@boot.bootlargeimage_file_name) %>
+                 <% end %>
+         </div>  
+        <br/>
+           <div class="field" >
+            
+              <font color="#000000"><%= f.label :bootsmallimage, "small boot" %></font>
+            <%= f.file_field :bootsmallimage %>  
+                 <% if @boot.bootsmallimage_file_name %>
+                    <%= image_tag(@boot.bootsmallimage_file_name) %>
+                 
+                 <% end %>   
+          
+         </div>  
+        <br/>
+           <div class="field" >
+           
+                <font color="#000000"><%= f.label :bootthumbimage, "boot color" %></font>
+                <%= f.file_field :bootthumbimage %>
+                <% if @boot.bootthumbimage_file_name %>
+                   <%= image_tag(@boot.bootthumbimage_file_name) %>
+                <% end %>   
+          
+         </div>  
+
+<br/>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+    </fieldset>    
+
+  </section>
+</article>

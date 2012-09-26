@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+   before_filter :login_required
+
   # GET /products
   # GET /products.json
-    layout "admin"
+    layout "admin1"
 
   def index
     @products = Product.all
@@ -26,6 +28,9 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
+     @boots = Boot.all
+     @socks = Sock.all
+
     @product = Product.new
 
     respond_to do |format|
@@ -36,6 +41,9 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+     @boots = Boot.all
+     @socks = Sock.all
+    
     @product = Product.find(params[:id])
   end
 

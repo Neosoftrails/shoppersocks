@@ -1,27 +1,87 @@
- <%= yield %> 
+<%= stylesheet_link_tag  "colors" %> 
+<%= stylesheet_link_tag  "screen" %> 
+<%= stylesheet_link_tag  "jquery.tipsy" %> 
+<%#= stylesheet_link_tag  "content" %> 
+<%= javascript_include_tag  "modernizr-1.7.min" %>  
 
+<%= javascript_include_tag  "jquery.min" %>  
+
+<%= javascript_include_tag  "jquery-1.5.1.min" %>  
+
+<%= javascript_include_tag  "jquery.tipsy" %>  
+
+<%= javascript_include_tag  "login" %>  
+
+
+
+
+<head>
+  <title>Login | Cardysocks Administration Template</title>
+</head>
+
+<body class="login">
+  
+  <div class="login-wrapper">
+    
+    
+          <div class="notification error">
+                <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                <h4>Error notification</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate, sapien quis fermentum luctus, libero.</p>
+          </div>
+  
+    <article class="content-box minimizer">
+          <header>
+                <h2>Cardysocks Admin</h2>
+                
+          </header>
+          <section>
+            
+                  <div id="logform">
+                  
+                    <%= form_tag sessions_path do %>  
+                      <dl>
+                        <dt>
+                          <label>Login</label>
+                        </dt>
+                        <dd>
+                          <%= text_field_tag :email, params[:email] %>  
+                        </dd>
+                        <dt>
+                          <label>Password</label>
+                        </dt>
+                        <dd>
+                         <%= password_field_tag :password %> 
+                        </dd>
+                        <dt class="checkbox remember"><label>Remember me for a 2 weeks</label></dt>
+                        <dd class="remember"><input type="checkbox" name="loginRemeber"></dd>
+                      </dl>
+                      <button type="submit">Submit</button>
+                    <% end %>
+                  </div>
+            
+            
+          </section>
+          <footer>
+              <ul class="login-links">
+                <li><a href="#">Lost password?</a></li>
+               
+              </ul>
+          </footer>
+    </article>
+   
+  </div>
+
+  
  
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 
-<div id="a"><h1>Listing admins</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admins.each do |admin| %>
-  <tr>
-    <td><%= admin.name %></td>
-    <td><%= link_to 'Show', admin %></td>
-    <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-    <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Admin', new_admin_path %></a></div>
+  
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; 
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>

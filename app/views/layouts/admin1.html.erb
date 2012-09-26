@@ -1,0 +1,105 @@
+<%= stylesheet_link_tag  "screen" %> 
+<%= stylesheet_link_tag  "colors" %> 
+<%= stylesheet_link_tag  "jquery.muon" %> 
+<%= stylesheet_link_tag  "jquery.tipsy" %> 
+<%= stylesheet_link_tag  "jquery.wysiwyg" %> 
+<%= stylesheet_link_tag  "jquery.datatables" %> 
+<%= stylesheet_link_tag  "jquery.nyromodal" %> 
+<%= stylesheet_link_tag  "jquery.datepicker" %> 
+<%= stylesheet_link_tag  "jquery.fileinput" %> 
+<%= stylesheet_link_tag  "jquery.fullcalendar" %>
+ <%= stylesheet_link_tag "jquery.nyromodal" %> 
+<%= stylesheet_link_tag  "jquery.visualize" %> 
+
+<%= javascript_include_tag :application  %>  
+<%= javascript_include_tag "jquery.visualize"  %>  
+<%= javascript_include_tag "jquery.visualize.tooltip"  %>  
+<%= javascript_include_tag "jquery.datatables"  %>  
+<%= javascript_include_tag "jquery.datepicker"  %>  
+<%= javascript_include_tag "jquery.fileinput"  %>  
+<%= javascript_include_tag "jquery.fullcalendar.min"  %>  
+<%= javascript_include_tag "jquery.ui.totop"  %>  
+<%= javascript_include_tag "jquery.snippet"  %>  
+<%= javascript_include_tag "jquery.muonmenu"  %>  
+<%= javascript_include_tag "rails.validations" %>  
+<%= javascript_include_tag "selectivizr"  %>  
+<%= javascript_include_tag "script"  %>  
+
+
+
+
+
+<head>
+	<title>Cardycosks</title>
+	
+</head>
+<body>
+
+        <header class="muon">
+			
+				<div class="navigation-wrapper">
+				
+					<li ><%= image_tag("logo.png", :size => "60x40") %></li> 
+					
+					<nav>
+					
+					<ul>
+							
+							<li class="muon-no-submenu"><%= link_to 'Dashboard ', boots_path %> 
+							<li><a href="#">Masters</a>
+							<nav class="muon-five-columns" style="left: 0px; display: block;">
+								
+							</nav>
+							</li>
+							
+		            </ul>
+						
+					
+					</nav>
+					
+					
+					<ul class="muon-user-list">
+						<li class="muon-user-data">Welcome, <a href="#">Admin</a></li>
+						<li><a class="muon-settings" title="Profile" href="">Settings</a></li>
+						<li ><a class="muon-logout" title="Logout" href="<%= log_out_path %>" > </a></li>
+					</ul>
+					
+				</div>
+			
+			</header>
+				
+	
+<section role="main" class="page-wrapper">
+		
+		<section id="dashboard">
+			
+			<ul class="shortcuts">
+					
+					<li class="shortcut-boots"><a title="" href="<%= boots_path %>">Boots</a></li>
+					
+					<li class="shortcut-socks" ><a title="" href="<%= socks_path %>">Socks</a></li>
+					<li class="shortcut-products"><a title="" href="<%= products_path %>">Products</a></li>
+					
+			</ul>
+			
+	</section>	
+
+		 <%= yield %>
+	
+	</section>
+	
+	<footer id="footer">
+		<div class="page-wrapper">
+			<section>
+    			<p>Cadrycocks - Admin Panel</p>
+			</section>
+			<section>
+    			&nbsp;
+			</section>
+			<section>
+				<p>© 2012 neosoft technologies </p>
+			</section>
+		</div>
+	</footer>
+	
+</body>

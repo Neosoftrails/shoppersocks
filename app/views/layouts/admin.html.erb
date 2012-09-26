@@ -1,22 +1,35 @@
 <%= stylesheet_link_tag  "admin" %> 
+<%= stylesheet_link_tag  "jquery.datatables" %> 
+<%= javascript_include_tag "jquery.datatables"  %>  
+
+
+
 <%= stylesheet_link_tag  "content" %> 
 
-<%= javascript_include_tag :application  %>  
+<%= javascript_include_tag "application"  %>  
 <%= javascript_include_tag  "rails.validations" %>  
-<div id="header" style="position:absolute;width:100%;height:60px;" bgcolor="#111111" color="#BBBBBB" size="7">
-	<br>
-	shoppersocks 
-      <div id="link" style="left:300;color:white;" >
-      	 <%= link_to 'BOOTS ', boots_path, :style => "color:#BBBBBB"  %>
+<div id="header" style="position:absolute;width:100%;height:40px;" bgcolor="#111111" color="#BBBBBB" size="7">
+	  
+     <divid="link" style="left:00px;color:white;"> 
+     <%=	image_tag("logo.png", :size => "60x40") %>
+   </div>
+      <div id="link" style="left:120;color:white;;top:20px;"  >
+      	 <%= link_to 'BOOTS ', boots_path, :style => "color:#BBBBBB;text-decoration:none;", :id => "boot_nav" %>
       </div>
-      <div   id="link" style="left:400;" >
-      	|&nbsp;&nbsp;&nbsp;<%= link_to 'SOCKS ', socks_path, :style => "color:#BBBBBB"   %>
+      <div   id="link" style="left:200;top:20px;" >
+      	|&nbsp;&nbsp;&nbsp;<%= link_to 'SOCKS ', socks_path, :style => "color:#BBBBBB;text-decoration:none;", :id => "sock_nav"    %>
       </div>
-      <div   id="link" style="left:500;" >
-      	|&nbsp;&nbsp;&nbsp;<%= link_to 'PRODUCTS  ', products_path, :style => "color:#BBBBBB"   %> 
+      <div   id="link" style="left:300;top:20px;" >
+      	|&nbsp;&nbsp;&nbsp;<%= link_to 'PRODUCTS  ', products_path, :style => "color:#BBBBBB;text-decoration:none;", :id => "product_nav"    %> 
+      </div>
+
+       <div  style="position:absolute;width:150px;height:20px;left:1100;top:25px;"  color="#959595" >
+        
+        <font color="#BBBBBB">Welcome, Admin</font>
+  
       </div>
       
-       <div  id="b" class="tooltip" title="logout" style="position:absolute;width:30;height:20px;left:1300;" bgcolor="#BBBBBB" color="BBBBBB" >
+       <div  id="b" class="tooltip" title="logout" style="position:absolute;width:30;height:20px;left:1300;top:25px;" bgcolor="#BBBBBB" color="BBBBBB" >
       	<%=  link_to image_tag("logout.png"), log_out_path   %>
       </div>
 
@@ -49,7 +62,7 @@
 
       </div>
 
-      <div class="content-box col-2 clear-rm" style="position:absolute;color:white;opacity:0.7;height:600px">
+      <div id="content" style="position:absolute;color:white;opacity:0.7;height:600px;background-color:#BBB;" >
           <header>
           <h2>
              <font color="#545454">Listings</font> </h2 >
@@ -70,5 +83,21 @@
 <div id="footer">
   </div>
 
+<script>
+$(document).ready(function(){
+  $("#boot_nav,#sock_nav,#product_nav").hover(
+
+    function () {
+    $(this).css("color","#888888")
+  },
+   function () {
+    $(this).css("color","#BBBBBB")
+  }
+);
+ 
+  });
+
+ 
+</script> 
 
 

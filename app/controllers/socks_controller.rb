@@ -1,7 +1,9 @@
 class SocksController < ApplicationController
+   before_filter :login_required
+
   # GET /socks
   # GET /socks.json
-    layout "admin"
+    layout "admin1"
 
   def index
     @socks = Sock.all

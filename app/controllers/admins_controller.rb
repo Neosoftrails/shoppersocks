@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   
   # GET /admins
   # GET /admins.json
-  layout "admin"
+  layout "login"
 
   def index
     @admins = Admin.all

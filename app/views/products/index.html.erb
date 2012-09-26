@@ -1,33 +1,47 @@
-<h1>Listing products</h1>
+<%= stylesheet_link_tag  "datatables" %> 
+<%= javascript_include_tag  "login" %>  
 
-<table>
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">products</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_product_path %>" > Add products</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 120px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
+
+<table class="datatable">
+  <thead  class="trclass" border="1">
   <tr>
-    <th>Productname</th>
+    <th>Product name</th>
+    <th>Large boot</th>
+    <th>Small boot</th>
     <th>Price</th>
-    <th>Largebootimage</th>
-    <th>Smallbootimage</th>
-    <th>Boot</th>
-    <th>Sock</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Action</th>
+    
   </tr>
+   </thead>
 
 <% @products.each do |product| %>
   <tr>
     <td><%= product.productname %></td>
-    <td><%= product.price %></td>
-    <td><%= product.largebootimage %></td>
-    <td><%= product.smallbootimage %></td>
-    <td><%= product.boot %></td>
-    <td><%= product.sock %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= image_tag(product.largeimage_file_name) %></td>
+    <td><%= image_tag(product.small_image_file_name) %></td>
+    <td>$<%= product.price %></td>
+    <td >
+    <span class="tooltip" title="Show"><%= link_to image_tag("icons/actions/page_white_find.png"), product %> </span>&nbsp;
+     <span  class="tooltip" title="edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_product_path(product) %></span >&nbsp;
+     <span class="tooltip" title="delete"><%= link_to image_tag("icons/actions/page_white_delete.png"), product, method: :delete, data: { confirm: 'Are you sure?' } %></span ></td>
   </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>
