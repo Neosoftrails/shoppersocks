@@ -22,4 +22,10 @@ class UserMailer < ActionMailer::Base
     mail :to => sendmail, :subject => "enquiry"
 
   end
+  
+  def registration_confirmation(user) 
+      @user = user
+        mail(:to => user.email, :subject => "Registered") 
+  end  
+
 end  

@@ -6,7 +6,7 @@
   
   <header>
         
-    <h2 style="padding-right: 90px;">Sockss</h2>
+    <h2 style="padding-right: 90px;">Socks</h2>
     <nav>
       <ul class="button-switch">
         <li><a class="button" href="<%= socks_path %>">List Socks</a></li>
@@ -17,6 +17,7 @@
   </header>
 
   <section>
+
   
 
 <%= form_for @sock, :validate => true  , :html => { :multipart => true }  do |f| %>
@@ -29,6 +30,7 @@
   <br>
   <div class="field">
    <font color="#000000"><%= f.label :image, "Photo" %> 
+     <%= f.file_field :image%>
       <% if @sock.image_file_name %>
       <%= image_tag(@sock.image_file_name) %>
       <% end %>

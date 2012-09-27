@@ -1,37 +1,60 @@
-<%= form_for(@contact_u) do |f| %>
-  <% if @contact_u.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact_u.errors.count, "error") %> prohibited this contact_u from being saved:</h2>
+        
 
-      <ul>
-      <% @contact_u.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <div style="position:absolute;left:210px;">
+            
+
+    <%= image_tag("contact_us.png") %>
+      </div>
+      <br>
+      <br>
+      <%= image_tag("line.png", :width =>'700', :height=>'4') %>
+       <%= form_for(@contact_u) do |f| %> 
+    <fieldset class="group-select" style="padding-top:0px;">
+        <!--<h4 class="legend">Contact Information</h4>-->
+       <!--  <p class="required"></p> -->
+        <ul>
+        <li>
+                <div class="input-box">
+                    <label for="name">Name <span class="required">*</span></label><br />
+                   <%= f.text_field :first_name %>  
+                </div>
+
+                <div class="input-box">
+                    <label for="name">Name <span class="required">*</span></label><br />
+                   <%= f.text_field :last_name %>  
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email <span class="required">*</span></label><br />
+                    <%= f.text_field :email %>   
+                </div>
+                <div class="input-box">
+                    <label for="enquiry">Enquiry <span class="required">*</span></label><br />
+                   <%= f.text_field :enquiry %>  
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="input-box">
+                    <label for="telephone">Telephone</label><br />
+                     <%= f.text_field :telephone %>    
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="input-box">
+                    <label for="comment">Comment</label><br />
+                      <%= f.text_area :comment, :cols => 100, :rows => 10 %>   
+                   
+                </div>
+        
+                </li>
+                </ul>
+         <p class="required" style="text-align:left;">* Required Fields</p>
+         <div class="button-set"  style="text-align: right; padding: 0px 215px;">
+       
+        <button class="form-button" type="submit" class="form-button" ><span>Submit</span></button>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :enquiry %><br />
-    <%= f.text_field :enquiry %>
-  </div>
-  <div class="field">
-    <%= f.label :telephone %><br />
-    <%= f.number_field :telephone %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </fieldset>
+    
 <% end %>

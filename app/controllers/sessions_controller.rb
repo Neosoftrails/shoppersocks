@@ -13,8 +13,17 @@ class SessionsController < ApplicationController
         redirect_to root_url, :notice => "Logged in!"  
         end   
     else  
-      flash.now.alert = "Invalid email or password"  
-      render "new"  
+       
+        if    params[:service]  == "admin" 
+           flash[:error] = "Invalid email or password"  
+          redirect_to  admin_path, :error => "Invalid email or password"  
+
+        elsif  params[:service]  == "user" 
+           flash[:error] = "Invalid email or password"
+            redirect_to log_in_path, :error => "Invalid email or password" 
+
+        end   
+
     end  
   end  
 
@@ -24,10 +33,10 @@ class SessionsController < ApplicationController
    
         if  session[:user_id] = 1
            session[:user_id] = nil  
-          redirect_to admin_path, :notice => "Logged in!"  
+          redirect_to admin_path, :notice => "Logged out!"  
         else  
           session[:user_id] = nil  
-        redirect_to root_url, :notice => "Logged in!"  
+        redirect_to root_url, :notice => "Logged out!"  
         end   
    end
 

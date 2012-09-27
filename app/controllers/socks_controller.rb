@@ -6,7 +6,7 @@ class SocksController < ApplicationController
     layout "admin1"
 
   def index
-    @socks = Sock.all
+    @socks = Sock.find(:all, :order => "id desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,7 +48,8 @@ class SocksController < ApplicationController
 
     respond_to do |format|
       if @sock.save
-        format.html { redirect_to @sock, notice: 'Sock was successfully created.' }
+         flash[:success] = "Sock was successfully created"
+        format.html { redirect_to socks_path, notice: 'Sock was successfully created.' }
         format.json { render json: @sock, status: :created, location: @sock }
       else
         format.html { render action: "new" }
@@ -64,7 +65,8 @@ class SocksController < ApplicationController
 
     respond_to do |format|
       if @sock.update_attributes(params[:sock])
-        format.html { redirect_to @sock, notice: 'Sock was successfully updated.' }
+        flash[:success] = "Updated successfully"
+        format.html { redirect_to socks_path, notice: 'Sock was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,6 +82,7 @@ class SocksController < ApplicationController
     @sock.destroy
 
     respond_to do |format|
+      flash[:success] = "Deleted successfully "
       format.html { redirect_to socks_url }
       format.json { head :no_content }
     end

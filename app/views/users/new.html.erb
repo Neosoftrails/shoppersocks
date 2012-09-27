@@ -1,4 +1,12 @@
 <div class="page-head">
+
+       <%  if flash[:success] %>
+             <div class="notification success" id="success">
+                        <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                        <h4>Success notification</h4>
+                        <p id="notice"><%= flash[:success] %></p>
+                  </div>
+            <% end %>   
     
     <h3>Create an Account</h3>
 </div>
@@ -14,6 +22,7 @@
 <li>
     <div class="input-box name-firstname">
         <label for="firstname">
+
             First Name            <span class="required">*</span>
         </label>
         <br />

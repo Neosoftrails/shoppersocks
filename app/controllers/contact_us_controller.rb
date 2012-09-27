@@ -1,7 +1,7 @@
 class ContactUsController < ApplicationController
   # GET /contact_us
   # GET /contact_us.json
-  layout "admin1"
+  
   def index
     @contact_us = ContactU.all
 
@@ -42,10 +42,19 @@ class ContactUsController < ApplicationController
   # POST /contact_us.json
   def create
     @contact_u = ContactU.new(params[:contact_u])
+   
+
+     name = @contact_u.first_name
+     email = @contact_u.email
+     enquiry =@contact_u.enquiry
+     telephone =@contact_u.telephone
+
 
     respond_to do |format|
       if @contact_u.save
-        format.html { redirect_to @contact_u, notice: 'Contact u was successfully created.' }
+        UserMailer.mail_contact_us(name,email,enquiry,telephone).deliver 
+         flash[:success] = "Your mail have been succesfully delivered u will be replied soon!"
+        format.html { redirect_to  new_contact_u_path }
         format.json { render json: @contact_u, status: :created, location: @contact_u }
       else
         format.html { render action: "new" }
@@ -62,6 +71,7 @@ class ContactUsController < ApplicationController
     respond_to do |format|
       if @contact_u.update_attributes(params[:contact_u])
         format.html { redirect_to @contact_u, notice: 'Contact u was successfully updated.' }
+        .
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

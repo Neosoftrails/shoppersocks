@@ -1,4 +1,10 @@
-<h1>New contact_u</h1>
+    <%  if flash[:success] %>
+          <div class="notification success">
+                <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                <h4>Success notification</h4>
+                <p id="notice"><%= flash[:success] %></p>
+          </div>
+    <% end %> 
 
 <%= render 'form' %>
 

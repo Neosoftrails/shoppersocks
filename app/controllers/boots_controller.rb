@@ -10,8 +10,7 @@ class BootsController < ApplicationController
   # GET /boots.json
     layout "admin1"
   def index
-    @boots = Boot.all
-
+    @boots = Boot.find(:all, :order => "id desc")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @boots }
@@ -57,8 +56,9 @@ class BootsController < ApplicationController
   
     respond_to do |format|
       if @boot.save
-        format.html { redirect_to @boot, notice: 'Boot was successfully created.' }
-        format.json { render json: @boot, status: :created, location: @boot }
+         flash[:success] = "Boot was successfully created"
+        format.html { redirect_to boots_path, notice: 'Boot was successfully created.' }
+        format.json { render json: boots_path, status: :created, location: @boot }
       else
         format.html { render action: "new" }
         format.json { render json: @boot.errors, status: :unprocessable_entity }
@@ -73,7 +73,8 @@ class BootsController < ApplicationController
 
     respond_to do |format|
       if @boot.update_attributes(params[:boot])
-        format.html { redirect_to @boot, notice: 'Boot was successfully updated.' }
+         flash[:success] = "Updated successfully "
+        format.html { redirect_to boots_path, notice: 'Boot was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -90,6 +91,7 @@ class BootsController < ApplicationController
 
 
     respond_to do |format|
+       flash[:success] = "Deleted successfully "
       format.html { redirect_to boots_url }
       format.json { head :no_content }
     end

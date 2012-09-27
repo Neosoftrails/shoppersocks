@@ -184,7 +184,6 @@ input[type="submit"]:disabled:hover, input[type="button"].disabled:hover, input[
 body { background-image:url('bgs/bg_main.png'); }
 input, textarea, select, .customfile, div.wysiwyg iframe { background-image:url('bgs/bg_input.png'); }
 input:disabled, input.disabled { background-image:url('bgs/bg_input_disabled.png'); }
-ul li { background-image:url('icons/lists/icon_list_style_basic.png'); }
 .list-style-arrow li { background-image:url('icons/lists/icon_list_style_arrow.png'); }
 .list-style-cross li { background-image:url('icons/lists/icon_list_style_cross.png'); }
 .list-style-checkmark li { background-image:url('icons/lists/icon_list_style_checkmark.png') }

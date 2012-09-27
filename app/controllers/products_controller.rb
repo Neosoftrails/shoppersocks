@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     layout "admin1"
 
   def index
-    @products = Product.all
+    @products = Product.find(:all, :order => "id desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,7 +54,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+         flash[:success] = "product was successfully created"
+        format.html { redirect_to products_path, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -70,7 +71,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        flash[:success] = "Updated successfully "
+        format.html { redirect_to products_path, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,6 +88,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
+      flash[:success] = "Deleted successfully "
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end

@@ -19,6 +19,7 @@ Blog::Application.routes.draw do
   get "cardysockspages/products"
   get "cardysockspages/search_bootcolor"
   root :to => "cardysockspages#home"
+  get "cardysockspages/shop_locations"
 
 
 

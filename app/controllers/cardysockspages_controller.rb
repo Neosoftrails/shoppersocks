@@ -1,4 +1,6 @@
 class CardysockspagesController < ApplicationController
+  
+ 
   def home
   end
 
@@ -39,5 +41,15 @@ class CardysockspagesController < ApplicationController
      
 
   end	
+
+  def shop_locations
+
+        @shop_locations = Shop.all
+
+        respond_to do |format|
+          format.json { render json: @shop_locations }
+        end  
+
+  end
 
 end

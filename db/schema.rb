@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120925110021) do
+ActiveRecord::Schema.define(:version => 20120927141130) do
 
   create_table "about_us", :force => true do |t|
     t.string   "name"
@@ -55,13 +55,13 @@ ActiveRecord::Schema.define(:version => 20120925110021) do
     t.string   "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "products", :force => true do |t|
     t.string   "productname"
     t.float    "price"
-    t.string   "largebootimage"
-    t.string   "smallbootimage"
     t.integer  "boot_id"
     t.integer  "sock_id"
     t.datetime "created_at",               :null => false
@@ -78,6 +78,18 @@ ActiveRecord::Schema.define(:version => 20120925110021) do
 
   add_index "products", ["boot_id"], :name => "index_products_on_boot_id"
   add_index "products", ["sock_id"], :name => "index_products_on_sock_id"
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "area"
+    t.string   "city"
+    t.string   "country"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "socks", :force => true do |t|
     t.string   "name"

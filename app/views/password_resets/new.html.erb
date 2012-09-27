@@ -1,6 +1,13 @@
 <div class="pro_inner">
                     <!-- start content -->
                             <div class="page-head">
+                                  <%  if flash[:success] %>
+             <div class="notification success" id="success">
+                        <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                        <h4>Success notification</h4>
+                        <p id="notice"><%= flash[:success] %></p>
+                  </div>
+            <% end %>  
         <h3>Forgot Your Password?</h3>
     </div>
         <%= form_tag password_resets_path, :method => :post do %> 

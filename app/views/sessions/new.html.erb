@@ -1,4 +1,20 @@
+
 <div class="page-head">
+            <%  if flash[:error] %>
+             <div class="notification error" id="error">
+                        <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                        <h4>Error notification</h4>
+                        <p id="notice"><%= flash[:error] %></p>
+                  </div>
+            <% end %>   
+             <%  if flash[:success] %>
+             <div class="notification success" id="success">
+                        <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                        <h4>Success notification</h4>
+                        <p id="notice"><%= flash[:success] %></p>
+                  </div>
+            <% end %>     
+
     
     <h3>Log in or Create an Account</h3>
 </div>
@@ -28,6 +44,9 @@
                     <li>
                         <label for="pass">Password <span class="required">*</span></label><br />
                          <%= password_field_tag :password %> 
+                    </li>
+                    <li>
+                    <%= hidden_field_tag "service","user" %>
                     </li>
                 </ul>
                 <p class="required">* Required Fields</p>
