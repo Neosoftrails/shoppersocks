@@ -1,0 +1,53 @@
+<font color="green"><p id="notice"><%= notice %></p></font>
+
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Shop</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_sock_path %>" > Add Shops</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <div class="dataTables_wrapper">
+
+<table class="datatable">
+  <thead  class="trclass" border="1">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Area</th>
+    <th>City</th>
+    <th>Country</th>
+     <th>Action</th>
+    
+  </tr>
+    </thead>
+
+   <tr>
+    <td><%= @shop.name %></td>
+    <td><%= @shop.address %></td>
+   <td><%= @shop.area %></td>
+    <td><%= @shop.city %></td>
+    <td><%= @shop.country %></td>
+
+    <td class="tooltip" title="Edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_shop_path(@shop) %> 
+    	
+ </td>
+   
+  </tr>
+
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>
+    
+
+
+
+

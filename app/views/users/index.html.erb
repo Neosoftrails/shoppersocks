@@ -1,39 +1,65 @@
- <%= form_tag users_path do |f| %>  
-      <p>  
-        Search 
-        <%= text_field_tag :user_tokens %>
-       
-    
-      </p>  
-    <% end %>  
+<%= stylesheet_link_tag  "jquery.datatables" %> 
+<%= javascript_include_tag  "login" %>  
 
-<div id="replace">
-  <table>
- 
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">Users</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_shop_path %>" > Add user</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 80px;">Toggle</a>
+  </header>
+  <section>
+    <%  if flash[:success] %>
+     <div class="dataTables_wrapper">
+           <div class="notification success">
+                <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                <h4>Success notification</h4>
+                <p id="notice"><%= flash[:success] %></p>
+            </div>
+           <% end %> 
+<table class="datatable">
+  <thead  class="trclass" border="1">
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
+     <th>Action</th>
+    
   </tr>
-
+   </thead>
 
 <% @users.each do |user| %>
-          <tr>
-            <td><%= user.first_name %></td>
-            <td><%= user.email %></td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
+  <tr>
+    <td><%= user.first_name %></td>
+    <td><%= user.email %></td>
+    <td >
+    <span class="tooltip" title="Show"><%= link_to image_tag("icons/actions/page_white_find.png"), user %> </span>&nbsp;
+     <span  class="tooltip" title="edit"><%#= link_to image_tag("icons/actions/page_white_edit.png"), edit_user_path(user) %></span >&nbsp;
+     <span class="tooltip" title="delete"><%= link_to image_tag("icons/actions/page_white_delete.png"), user,  method: :delete, data: { confirm: 'Are you sure?' } %></span ></td>
+  </tr>
+<% end %>
+</tbody>
+    </table>
+    </form>
+    </div>
+  </section>
+</article>
 
 
-</table>
-</div>
-<br />
 
 
-<%= link_to 'New User', new_user_path %></center>
+
+
+
+
+
+
+
+
+
+
+
 

@@ -687,8 +687,7 @@ ul li:last-child { margin-bottom:0; }
 	text-decoration:none;
 }
 .image-actions li a:hover {
-	color:#fff;
-	text-decoration:underline;
+	
 }
 
 /*  Stats Summary */

@@ -8,8 +8,16 @@ Blog::Application.routes.draw do
   resources :socks
 
   resources :boots
-  get "/boots/:id/delete"
+
+  resources :users  
+  
+  resources :sessions  
+
   resources :admins
+
+   resources :shops
+
+  get "/boots/:id/delete"
 
   get "cardysockspages/home"
   get "cardysockspages/find_a_shop"
@@ -20,6 +28,8 @@ Blog::Application.routes.draw do
   get "cardysockspages/search_bootcolor"
   root :to => "cardysockspages#home"
   get "cardysockspages/shop_locations"
+  get "cardysockspages/locateshop"
+  get "cardysockspages/socks_height"
 
 
 
@@ -27,16 +37,19 @@ Blog::Application.routes.draw do
   get "admin" => "admins#index", :as => "admin"
   get "log_in" => "sessions#new", :as => "log_in"  
   get "log_out" => "sessions#destroy", :as => "log_out"  
-  
-  
   get "sign_up" => "users#new", :as => "sign_up"  
    
   match 'password_resets/:id/edit' => 'password_resets#edit'
-  resources :users  
-  resources :sessions  
+  
   resources :password_resets do
     get 'edit', :on => :collection
   end 
+
+  resources :cardysockspages do
+      get :find_a_shop, :on => :collection
+      get :locateshop,   :on => :member
+  end 
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

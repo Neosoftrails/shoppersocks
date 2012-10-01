@@ -425,6 +425,10 @@ input.invalid, textarea.invalid { border-color:#ae432e; }
 .shortcuts .shortcut-boots a { background-image:url('bootred.jpeg');background-size:120px 60px; }
 .shortcuts .shortcut-socks a { background-image:url('redsocks.jpeg');background-size:70px 60px; }
 .shortcuts .shortcut-products a { background-image:url('grey_1.png');background-size:60px 60px; }
+.shortcuts .shortcut-shop a { background-image:url('add_a_shop.png');background-size:60px 60px; }
+.shortcuts .shortcut-user a { background-image:url('users.png');background-size:60px 50px; }
+
+
 
 
 

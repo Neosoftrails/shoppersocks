@@ -33,10 +33,21 @@ class CardysockspagesController < ApplicationController
 
   def products
 
+    @boots = Boot.all
+   
     	
   end  
 
   def search_bootcolor
+
+  def socks_height
+
+    respond_to do | format |  
+        format.js {render :layout => false}  
+    end
+
+  
+  end  
 
      
 
@@ -49,6 +60,15 @@ class CardysockspagesController < ApplicationController
         respond_to do |format|
           format.json { render json: @shop_locations }
         end  
+
+  end
+
+  def locateshop
+    p params[:id]
+    puts "jkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
+    nnnnn
+
+
 
   end
 

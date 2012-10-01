@@ -1,18 +1,57 @@
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
-	function initialize() {
-	  var mapOptions = {
-		zoom: 11,
-		center: new google.maps.LatLng(19.09, 72.82),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	  }
-	  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-	}
+
+	  $("#search").live('change', function(){
+		    var city = $(this).val();
+		    
+										  var geocoder=new google.maps.Geocoder();
+										  var i=0; 
+										  var address=new Array();
+										  address[0]=city;
 
 
+
+										  for(i=0;i<address.length;i++)
+										  {
+										    geocoder.geocode( { 'address': address[i]}, function(results, status) 
+										      {
+										        if (status == google.maps.GeocoderStatus.OK)
+										        {
+										          var latitude = results[0].geometry.location.lat();
+										          var longitude = results[0].geometry.location.lng();
+										          var mapOptions = {
+														zoom: 11,
+														center: new google.maps.LatLng(latitude, longitude),
+														mapTypeId: google.maps.MapTypeId.ROADMAP
+													  }
+													  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+														 $.ajax({
+														  type: "GET",
+														  url: '/cardysockspages/shop_locations.json',
+													      success: function(data){
+																$.each(data, function(i, item) {
+																  var marker = new google.maps.Marker({
+																  position: new google.maps.LatLng(item.latitude, item.longitude),
+												     		 	  map: map,
+												      		 	  title:item.name
+																});
+												  	   		}); 
+														 }
+													});
+										 
+
+
+										        } 
+										      }); 
+								  }
+		  })
+
+
+
+	
 	$(document).ready(function(){
-		initialize();
-		 var mapOptions = {
+		var mapOptions = {
 		zoom: 11,
 		center: new google.maps.LatLng(19.09647, 72.82),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -33,5 +72,13 @@
 	});
 	});
 </script>
+       
+		        <p>  
+		          Search 
+		          <%= text_field_tag :search %>
+		        </p> 
+
+
+								
 
 		<div id="map_canvas" style="width: 100%; height: 100%"></div>

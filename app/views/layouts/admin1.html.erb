@@ -23,8 +23,7 @@
 <%= javascript_include_tag "jquery.muonmenu"  %>  
 <%= javascript_include_tag "rails.validations" %>  
 <%= javascript_include_tag "selectivizr"  %>  
-<%= javascript_include_tag "script"  %>  
-<%= csrf_meta_tag %>
+<%= csrf_meta_tag %>	
 
 
 
@@ -80,9 +79,11 @@
 					
 					<li class="shortcut-socks" ><a title="" href="<%= socks_path %>">Socks</a></li>
 					<li class="shortcut-products"><a title="" href="<%= products_path %>">Products</a></li>
+					<li class="shortcut-shop"><a title="" href="<%= shops_path %>">add new shop</a></li>
+					<li class="shortcut-user"><a title="" href="<%= users_path %>">Users</a></li>
 					
 			</ul>
-			
+		<script src="http://safedoc.phpdevelopment.co.in/public/admin/js/script.js"></script>		
 	</section>	
 
 		 <%= yield %>

@@ -49,3 +49,17 @@
     
 }
 
+#product_list{
+    position: relative;
+    margin-left:  -550px;
+    font-size:150%
+
+}
+
+#preview{
+     position: relative;
+    margin-left:  -40px;
+     font-size:100%
+      margin-top:  20px;
+
+}

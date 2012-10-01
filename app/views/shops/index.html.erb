@@ -1,0 +1,57 @@
+
+<%= javascript_include_tag  "login" %>  
+
+<article class="content-box minimizer">
+  <header>
+    <h2 style="padding-right: 90px;">shops</h2>
+    <nav >
+      <ul class="button-switch">
+        <li><a class="button" href="<%=  new_shop_path %>" > Add shop</a></li>
+      </ul>
+    </nav>
+    
+    <a title="Toggle Content Block" class="content-box-minimizer" href="#" style="display: block; left: 120px;">Toggle</a>
+  </header>
+  <section>
+      <div class="dataTables_wrapper">
+    <%  if flash[:success] %>
+           <div class="notification success">
+                <a href="#" class="close-notification tooltip" title="Hide Notification">x</a>
+                <h4>Success notification</h4>
+                <p id="notice"><%= flash[:success] %></p>
+            </div>
+           <% end %> 
+
+ 
+          <table class="datatable">
+            <thead  class="trclass" border="1">
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Area</th>
+              <th>City</th>
+              <th>Country</th>
+               <th>Action</th>
+              
+            </tr>
+             </thead>
+
+          <% @shops.each do |shop| %>
+            <tr>
+              <td><%= shop.name %></td>
+              <td><%= shop.address %></td>
+             <td><%= shop.area %></td>
+              <td><%= shop.city %></td>
+               <td><%= shop.country %></td>
+              <td >
+              <span class="tooltip" title="Show"><%= link_to image_tag("icons/actions/page_white_find.png"), shop %> </span>&nbsp;
+               <span  class="tooltip" title="edit"><%= link_to image_tag("icons/actions/page_white_edit.png"), edit_shop_path(shop) %></span >&nbsp;
+               <span class="tooltip" title="delete"><%= link_to image_tag("icons/actions/page_white_delete.png"), shop,  method: :delete, data: { confirm: 'Are you sure?' } %></span ></td>
+            </tr>
+          <% end %>
+          </tbody>
+              </table>
+
+    </div>
+  </section>
+</article>

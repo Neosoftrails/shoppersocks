@@ -1,5 +1,6 @@
 class UsersController < ApplicationController  
    before_filter :login_required
+   layout 'admin1', :only => [:index]
  
       def new  
         @user = User.new  
@@ -17,7 +18,8 @@ class UsersController < ApplicationController
       end  
       
       def index
-        @users = User.find(:all)
+          
+        @users = User.find(:all, :order => "id desc")
 
         respond_to do |format|
           format.html # index.html.erb
@@ -25,4 +27,16 @@ class UsersController < ApplicationController
         end
       end
 
-end  
+   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      flash[:success] = "Deleted successfully "
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
+  end
+
+end 
+
